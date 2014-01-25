@@ -1,6 +1,8 @@
 div(ng-include='\'partials/navbar\'')
 
 .jumbotron
+  input(name="file", type="file", class="cloudinary-fileupload", data-cloudinary-field="image_id", data-form-data="{{cloudinaryData}}")
+  pre {{cloudinaryData}}
   h1
     | 'Allo, 'Allo 
     span(ng-show='currentUser') {{ currentUser.name }}
