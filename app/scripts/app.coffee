@@ -4,7 +4,11 @@ angular.module('krisTileApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'angularFileUpload',
+  'ngRoute',
+  'infowrapFilepicker',
+  'firebase',
+  'ng-transloadit'
 ])
   .config ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider
@@ -22,6 +26,21 @@ angular.module('krisTileApp', [
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
         authenticate: true
+      .when '/fileUpload',
+        templateUrl: 'partials/fileupload'
+        controller: 'FileuploadCtrl'
+      .when '/transloadit',
+        templateUrl: 'partials/transloadit'
+        controller: 'TransloaditCtrl'
+      .when '/message',
+        templateUrl: 'partials/message'
+        controller: 'MessageCtrl'
+      .when '/ink',
+        templateUrl: 'partials/ink'
+        controller: 'InkCtrl'
+      .when '/gallery',
+        templateUrl: 'partials/gallery'
+        controller: 'GalleryCtrl'
       .otherwise
         redirectTo: '/'
 

@@ -11,10 +11,19 @@
     "angular-cookies": "1.2.6",
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
-    "cloudinary_js": "git@github.com:cloudinary/cloudinary_js.git#~1.0.12"
+    "cloudinary_js": "git@github.com:cloudinary/cloudinary_js.git#~1.0.12",
+    "ng-file-upload": "~1.2.6",
+    "FileAPI": "~1.2.7",
+    "ng-transloadit": "git@github.com:kera-inc/ng-transloadit.git",
+    "infowrap-filepicker": "git@github.com:infowrap/infowrap-filepicker.git#0.3.5"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",
-    "angular-scenario": "1.2.6"
+    "angular-scenario": "1.2.6",
+    "underscore": "~1.5.2",
+    "lodash": "~2.4.1"
+  },
+  "resolutions": {
+    "jquery": "~1.10.2"
   }
 }

@@ -1,0 +1,35 @@
+button(ng-click="test()") test
+.btn.btn-primary(data-filepicker-btn='data-filepicker-btn', data-preview-on-upload='true', data-prevent-default='true') Upload pictures
+ul
+  li sort by priority
+.jumbotron(ng-repeat="image in images | orderByPriority")
+    .preview 
+      img(ng-src="{{image.thumb.url}}")
+      p filename: {{image.original.filename}}
+      a(href="{{image.original.url}}") full size
+      a(href="{{amazon + image.original.container +'/'+ image.original.key}}")  Amazon link
+      a(href="{{amazon + image.original.container +'/'+ image.thumb.key}}")  Amazon thumb link
+      a(ng-click="remove(image.$id)")  Remove
+      p
+        input(type="text", ng-model="image.note")
+        button(ng-click="attachNote(image.$id, image.note)", type="submit") Save note
+      pre {{image.original | json}}
+      pre {{image.thumb | json}}
+      
+
+.modal-backdrop.in(data-ng-show='filepickerModalOpen', data-ng-click='modalClose()')
+#filepicker-modal-container(data-ng-show='filepickerModalOpen')
+  a.glyphicon.glyphicon-close(data-ng-click='filepickerModalClose()')
+  iframe#filepicker-modal(name='filepicker-modal', frameborder='0', marginwidth='0', marginheight='0', data-ng-show='filepickerModalOpen')
+
+
+
+//- p Choose some files and check it out.
+//-       .btn.btn-primary(data-filepicker-btn='data-filepicker-btn', data-preview-on-upload='true', data-prevent-default='true') Choose ...
+//-       .container.files
+//-         .file(data-ng-repeat='file in files')
+//-           .preview
+//-             img(data-ng-src='{{file.url}}', alt='')
+//-           h5 {{file.filename}}
+//-           pre {{file}}
+//-           pre {{newFile}}

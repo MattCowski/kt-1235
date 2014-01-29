@@ -41,7 +41,14 @@ html.no-js
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
 
+
     <!-- build:js(app) scripts/vendor.js -->
+    <!-- shim to support upload progress/abort and non-HTML5 FormData browsers.-->
+    <!-- use html5-shim.min.js instead for progress/abort for html5 browsers only-->
+    <!-- Note: MUST BE PLACED BEFORE angular.js-->
+    //- <script src="bower_components/FileAPI/FileAPI.js"></script>
+    //- <script src="bower_components/FileAPI/FileAPI.flash.swf"></script>
+    //- <script src="bower_components/ng-file-upload/angular-file-upload-shim.js"></script>
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -50,12 +57,19 @@ html.no-js
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+    //- <script src="bower_components/infowrap-filepicker/infowrap-filepicker.js"></script>
     <!-- endbower -->
     <script src="bower_components/cloudinary_js/js/jquery.cloudinary.js"></script>
     <script src="bower_components/cloudinary_js/js/jquery.ui.widget.js"></script>
     <script src="bower_components/cloudinary_js/js/jquery.iframe-transport.js"></script>
     <script src="bower_components/cloudinary_js/js/jquery.fileupload.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/infowrap-filepicker/build/infowrap-filepicker.js"></script>
+    <script src="bower_components/ng-transloadit/lib/ng-transloadit.js"></script>
     <!-- endbuild -->
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.js"></script>
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
@@ -67,7 +81,13 @@ html.no-js
     <script src="scripts/services/session.js"></script>
     <script src="scripts/services/user.js"></script>
     <script src="scripts/directives/mongooseError.js"></script>
+    <script src="scripts/controllers/fileUpload.js"></script>
+    <script src="scripts/controllers/transloadit.js"></script>
+    <script src="scripts/controllers/message.js"></script>
+    <script src="scripts/controllers/ink.js"></script>
+    <script src="scripts/controllers/gallery.js"></script>
+    <script src="scripts/services/fbURL.js"></script>
+    <script src="scripts/services/Quotes.js"></script>
+    <script src="scripts/services/Images.js"></script>
     <!-- endbuild -->
     
-    script.
-      $.cloudinary.config({ cloud_name: 'kristile-com', api_key: '467799287163396'})
